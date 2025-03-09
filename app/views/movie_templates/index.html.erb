@@ -3,7 +3,45 @@
 </h1>
 
 <hr>
+<!-- new movie form -->
+<form action="/insert_movie" method="post">
 
+  <div> <!-- movie title -->
+    <label for="title">Title</label>
+    <input id="title" name="movie_title" type="text">
+  </div>
+
+  <div> <!--movie year-->
+    <label for="year">Year</label>
+    <input id="year" name="movie_year" type="text">
+  </div>
+
+  <div> <!--movie duration-->
+    <label for="duration">Duration</label>
+    <input id="duration" name="movie_duration" type="text" placeholder="Duration in minutes...">
+  </div>
+
+  <div> <!--movie description-->
+    <label for="description">Description</label>
+    <textarea id="description" name="movie_desc" rows="3"></textarea>
+  <div>
+
+  <div> <!--movie image url-->
+    <label for="image_url">Image</label>
+    <input id="image_url" name="movie_image_url" type="text">
+  </div>
+
+  <div> <!--movie director id-->
+    <label for="director_id">Director ID</label>
+    <input id="director_id" name="movie_director_id" type="text">
+  </div>
+
+  <button>Create movie</button>
+
+</form>
+
+<hr>
+<!-- table of movies -->
 <table border="1">
   <tr>
     <th>
@@ -53,7 +91,15 @@
       
       <% the_director = matching_directors.at(0) %>
 
-      <%= the_director.name %>
+      <!-- error handler if no director is found -->
+
+      <% if the_director == nil %>
+        No director found!
+      <% else %>
+        <%= the_director.name %>
+      <% end %>
+
+      <!-- end error handler -->
     </td>
 
     <td>

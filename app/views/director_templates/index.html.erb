@@ -3,6 +3,35 @@
 </h1>
 
 <hr>
+<!-- Form to add new director -->
+<form action="/insert_director" method="post">
+
+  <div> <!-- director name -->
+    <label for="name">Name</label>
+    <input id="name" name="director_name" type="text">
+  </div>
+
+  <div> <!-- director dob -->
+    <label for="dob">Dob</label>
+    <input id="dob" name="director_dob" type="date">
+  </div>
+
+  <div> <!-- director bio -->
+    <label for="bio">Bio</label>
+    <textarea id="bio" name="director_bio" rows="3"></textarea>
+  </div>
+
+  <div> <!-- director image url -->
+    <label for="image_url">Image</label>
+    <input id="image_url" name="director_image_url" type="text">
+  </div>
+
+  <button>Create director</button>
+
+</form>
+
+<hr>
+<!-- table of directors -->
 
 <table border="1">
   <tr>

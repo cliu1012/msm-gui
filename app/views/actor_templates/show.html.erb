@@ -2,12 +2,48 @@
   Actor #<%= @the_actor.id %> details
 </h1>
 
-<a href="/actors">
-  Go back
-</a>
+<div>
+  <a href="/actors">
+    Go back
+  </a>
+</div>
+
+<div> <!-- delete the actor -->
+  <a href="/delete_actor/<%= @the_actor.id %>">
+    Delete actor
+  </a>
+</div>
 
 <hr>
+<!-- form to update actor -->
+<form action="/update_actor/<%= @the_actor.id %>" method="post">
+  <div> <!--actor name-->
+    <label for="name">Name</label>
+    <input id="name" name="actor_name" type="text" value="<%= @the_actor.name %>">
+  </div>
 
+  <div> <!--actor dob-->
+    <label for="dob">Dob</label>
+    <input id="dob" name="actor_dob" type="date" value="<%= @the_actor.dob %>">
+  </div>
+
+  <div> <!--actor bio-->
+    <label for="bio">Bio</label>
+    <textarea id="bio" name="actor_bio" rows="3"><%= @the_actor.bio %></textarea>
+  </div>
+
+  <div> <!--actor image_url-->
+    <label for="image_url">Image</label>
+    <input id="image_url" name="actor_image_url" type="text" value="<%= @the_actor.image %>">
+  </div>
+
+  <button>Update actor</button>
+
+</form>
+
+
+<hr>
+<!-- actor information -->
 <dl>
   <dt>
     Name

@@ -2,12 +2,48 @@
   Director #<%= @the_director.id %> details
 </h1>
 
-<a href="/directors">
-  Go back
-</a>
+<div>
+  <a href="/directors">
+    Go back
+  </a>
+</div>
+
+<div> <!-- delete director -->
+  <a href="/delete_director/<%= @the_director.id %>">
+    Delete director
+  </a>
+<div>
 
 <hr>
+<!-- form to update director -->
+<form action="/update_director/<%= @the_director.id %>" method="post"> 
 
+  <div> <!-- director name -->
+    <label for="name">Name</label>
+    <input id="name" name="director_name" type="text" value="<%= @the_director.name %>">
+  </div>
+
+  <div> <!-- director dob -->
+    <label for="dob">Dob</label>
+    <input id="dob" name="director_dob" type="date" value="<%= @the_director.dob %>">
+  </div>
+
+  <div> <!-- director bio -->
+    <label for="bio">Bio</label>
+    <textarea id="bio" name="director_bio" rows="3"><%= @the_director.bio %></textarea>
+  </div>
+
+  <div> <!-- director image url -->
+    <label for="image_url">Image</label>
+    <input id="image_url" name="director_image_url" type="text" value="<%= @the_director.image %>">
+  </div>
+
+  <button>Update director</button>
+
+</form>
+
+<hr>
+<!-- director information -->
 <dl>
   <dt>
     Name

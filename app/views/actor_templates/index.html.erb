@@ -4,6 +4,34 @@
 
 <hr>
 
+<!-- form to add new actor -->
+<form action="/insert_actor" method="post">
+  <div> <!--actor name-->
+    <label for="name">Name</label>
+    <input id="name" name="actor_name" type="text">
+  </div>
+
+  <div> <!--actor dob-->
+    <label for="dob">Dob</label>
+    <input id="dob" name="actor_dob" type="date">
+  </div>
+
+  <div> <!--actor bio-->
+    <label for="bio">Bio</label>
+    <textarea id="bio" name="actor_bio" rows="3"></textarea>
+  </div>
+
+  <div> <!--actor image_url-->
+    <label for="image_url">Image</label>
+    <input id="image_url" name="actor_image_url" type="text">
+  </div>
+
+  <button>Create actor</button>
+
+</form>
+
+<hr>
+<!-- table of actors -->
 <table border="1">
   <tr>
     <th>
